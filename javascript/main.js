@@ -439,3 +439,19 @@ $(function() {
 
 });
 
+
+function formSubmit() {
+	var myForm = document.getElementById("mG61Hd");
+
+	var formResponseDiv = document.getElementById("formResponseDiv");
+	// formResponseDiv.style.height = currentHeight + "px";
+	formResponseDiv.style.visibility = "visible";
+
+	var formElement = myForm;
+	var request = new XMLHttpRequest();
+	request.open("POST", "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdvISxkBfQqpr9kBsvI9w-P0D36etqff5J0nUeJ9b4dh3HAOA/formResponse");
+	request.send(new FormData(formElement));
+
+	myForm.parentNode.removeChild( myForm );
+
+}
